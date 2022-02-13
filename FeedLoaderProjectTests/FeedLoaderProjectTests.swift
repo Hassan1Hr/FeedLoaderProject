@@ -8,6 +8,20 @@
 import XCTest
 @testable import FeedLoaderProject
 
+class RemoteFeedLoader{
+    func load(){
+        HTTPClient.shared.requestedURL = URL(string: "https://a-url.com")
+    }
+}
+
+class HTTPClient{
+    static let shared = HTTPClient()
+    
+    private init() {}
+    
+    var requestedURL: URL?
+}
+
 class FeedLoaderProjectTests: XCTestCase {
 
     override func setUpWithError() throws {
